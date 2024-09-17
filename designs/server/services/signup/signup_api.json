@@ -1,0 +1,14 @@
+[
+    {
+        "type": "tab",
+        "id": "SSD_SERVICE_ID_sd_CyiVn5og68WpMPuY",
+        "disabled": false,
+        "info": "",
+        "label": "signup_api",
+        "createdDate": "2024-09-17T10:18:10.299Z",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "signup_api",
+        "relativeParentPath": "signup"
+    }
+]

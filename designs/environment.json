@@ -1,0 +1,68 @@
+{
+    "TYPE": {
+        "name": "TYPE",
+        "properties": {
+            "production": "client",
+            "ssdURL": "client",
+            "tenantName": "client",
+            "appName": "client",
+            "namespace": "client",
+            "useDefaultExceptionUI": "client",
+            "isIDSEnabled": "client",
+            "SSD_BASE_PATH": "server",
+            "SSD_DEFAULT_PORT": "server",
+            "webAppMountpoint": "both",
+            "CLOCK_TOLERANCE": "server",
+            "NGFORAGE_MOBILE_DRIVER": "client",
+            "DB_HOSTNAME": "server",
+            "DB_USERNAME": "server",
+            "DB_PASSWORD": "server",
+            "DB_PORT": "server",
+            "DB_NAME": "server"
+        }
+    },
+    "dev": {
+        "name": "dev",
+        "properties": {
+            "production": false,
+            "ssdURL": "http://localhost:8081/api/",
+            "tenantName": "expleo",
+            "appName": "backendjbpm",
+            "namespace": "com.expleo.backendjbpm",
+            "useDefaultExceptionUI": true,
+            "isIDSEnabled": "false",
+            "SSD_BASE_PATH": "/api",
+            "SSD_DEFAULT_PORT": "8081",
+            "webAppMountpoint": "web",
+            "CLOCK_TOLERANCE": "5",
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "DB_HOSTNAME": "localhost",
+            "DB_USERNAME": "admin",
+            "DB_PASSWORD": "admin",
+            "DB_PORT": "3306",
+            "DB_NAME": "employeeonboarding"
+        }
+    },
+    "prod": {
+        "name": "prod",
+        "properties": {
+            "production": true,
+            "ssdURL": "http://localhost:8081/api/",
+            "tenantName": "expleo",
+            "appName": "backendjbpm",
+            "namespace": "com.expleo.backendjbpm",
+            "useDefaultExceptionUI": true,
+            "isIDSEnabled": "false",
+            "SSD_BASE_PATH": "/api",
+            "SSD_DEFAULT_PORT": "8081",
+            "webAppMountpoint": "web",
+            "CLOCK_TOLERANCE": "5",
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "DB_HOSTNAME": "localhost",
+            "DB_USERNAME": "admin",
+            "DB_PASSWORD": "admin",
+            "DB_PORT": "3306",
+            "DB_NAME": "employeeonboarding"
+        }
+    }
+}

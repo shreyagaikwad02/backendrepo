@@ -1,0 +1,240 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_pnvwTXMjkLPZ7X06",
+        "type": "tab",
+        "createdDate": "2024-09-17T06:28:06.451Z",
+        "label": "login_api",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "login_api",
+        "relativeParentPath": "login"
+    },
+    {
+        "id": "sd_GUNAZinzDwfQmLMS",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_pnvwTXMjkLPZ7X06",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "login",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 105,
+        "y": 140,
+        "wires": [
+            [
+                "sd_ijldkMGPim3yVaMM"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "login_api",
+        "functionName": "sd_GUNAZinzDwfQmLMS"
+    },
+    {
+        "id": "sd_7AJ12X5C1XV9X4kF",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_pnvwTXMjkLPZ7X06",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "resultMapping",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.resultMapping",
+            "send": "bh.local.resultMapping"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [
+                {
+                    "key": "application/json",
+                    "rowId": "sd_7pdr73lB8jTss1Yt",
+                    "valid": true
+                }
+            ],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_7AJ12X5C1XV9X4kF",
+        "category": "HTTP",
+        "x": 565,
+        "y": 140,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login_api",
+        "generated": true
+    },
+    {
+        "id": "sd_ijldkMGPim3yVaMM",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_pnvwTXMjkLPZ7X06",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.logincredentials={\nuserName:bh.input.body.userName,\npassword:bh.input.body.password,\n}",
+        "functionName": "sd_ijldkMGPim3yVaMM",
+        "category": "Function",
+        "x": 225,
+        "y": 140,
+        "wires": [
+            [
+                "sd_At5I0snDQy2qtMFG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login_api",
+        "generated": true
+    },
+    {
+        "id": "sd_At5I0snDQy2qtMFG",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_pnvwTXMjkLPZ7X06",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_z9qNdaMuIxfdDfzE",
+            "type": "tab",
+            "createdDate": "2024-09-17T06:55:18.606Z",
+            "label": "loginService",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_0y3q6x4frKdNe5LU",
+            "flowName": "loginService"
+        },
+        "inputVariables": [
+            {
+                "key": "userName",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.userName"
+            },
+            {
+                "key": "password",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.password"
+            }
+        ],
+        "bhVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "outputMapping",
+                "valueType": "bh.local",
+                "value": "outputMapping",
+                "mapVarName": "outputMapping",
+                "localVar": "bh.local.outputMapping"
+            }
+        ],
+        "callService": "./loginService",
+        "startName": "loginService",
+        "inputParams": [
+            "bh.input.body.userName",
+            "bh.input.body.password"
+        ],
+        "accept_bh": false,
+        "functionName": "sd_At5I0snDQy2qtMFG",
+        "category": "General",
+        "x": 345,
+        "y": 140,
+        "wires": [
+            [
+                "sd_bF3VHgFFbFN9Xxm0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login_api",
+        "generated": true
+    },
+    {
+        "id": "sd_bF3VHgFFbFN9Xxm0",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_pnvwTXMjkLPZ7X06",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.resultMapping={\n    code:200,\n    data: bh.local.outputMapping\n}",
+        "functionName": "sd_bF3VHgFFbFN9Xxm0",
+        "category": "Function",
+        "x": 465,
+        "y": 140,
+        "wires": [
+            [
+                "sd_7AJ12X5C1XV9X4kF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login_api",
+        "generated": true
+    }
+]

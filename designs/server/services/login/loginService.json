@@ -1,0 +1,141 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_z9qNdaMuIxfdDfzE",
+        "type": "tab",
+        "createdDate": "2024-09-17T06:55:18.606Z",
+        "label": "loginService",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "loginService",
+        "relativeParentPath": "login"
+    },
+    {
+        "id": "sd_0y3q6x4frKdNe5LU",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_z9qNdaMuIxfdDfzE",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "loginService",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "userName",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "password",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "outputMapping",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "loginService",
+        "category": "General",
+        "x": 65,
+        "y": 200,
+        "wires": [
+            [
+                "sd_jyU275KmmvR25nAM"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "loginService"
+    },
+    {
+        "id": "sd_jyU275KmmvR25nAM",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_z9qNdaMuIxfdDfzE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.logincredentials={\n  userName:bh.input.userName,\n  password:bh.input.password,\n}\n\nbh.input.userCheckstatus;\nbh.local.userNotAvailable\n\nbh.input.checkuser={\n  userName:bh.input.userName,\n  newpassword:bh.input.password,\n}\n\nbh.input.loginqurey= `INSERT INTO login (username, password) VALUES (\n    '${username}', \n    '${password}'\n    )`;",
+        "functionName": "sd_jyU275KmmvR25nAM",
+        "category": "Function",
+        "x": 180,
+        "y": 200,
+        "wires": [
+            [
+                "sd_rWxIR5Z50Iqn736s"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "loginService",
+        "generated": true
+    },
+    {
+        "id": "sd_rWxIR5Z50Iqn736s",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_z9qNdaMuIxfdDfzE",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_GE6Vsx1TRqmkFScc",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "outputMapping"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.input",
+            "value": "loginquery"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "mysql",
+        "functionName": "sd_rWxIR5Z50Iqn736s",
+        "category": "Storage",
+        "x": 300,
+        "y": 200,
+        "wires": [
+            [
+                "sd_TJugx2Mv3E4Dx3bP"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "loginService",
+        "generated": true
+    },
+    {
+        "id": "sd_TJugx2Mv3E4Dx3bP",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_z9qNdaMuIxfdDfzE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"login credencials...\",bh.local.outputMapping);",
+        "functionName": "sd_TJugx2Mv3E4Dx3bP",
+        "category": "Function",
+        "x": 385,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "loginService",
+        "generated": true
+    }
+]

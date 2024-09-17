@@ -1,0 +1,13 @@
+{
+    "displayName": "backendJbpm",
+    "appName": "backendjbpm",
+    "description": "batabase  of jbpm",
+    "lastModified": "2024-09-17T06:26:23.899Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2024-09-17T06:26:22.105Z",
+    "analyticsId": "bd6f5bc8-2b0b-8f5e-809e-c9e6e733ef35",
+    "createdStudioVersion": "9.2.3"
+}

@@ -1,0 +1,17 @@
+{
+    "/login": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "login_api"
+            ]
+        }
+    }
+}
