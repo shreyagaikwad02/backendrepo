@@ -81,7 +81,7 @@ export class login_api {
     log.debug('mounting all paths for service :: login_api');
 
     this.app['post'](
-      `${this.serviceBasePath}/login`,
+      `${this.serviceBasePath}/emp/login`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,

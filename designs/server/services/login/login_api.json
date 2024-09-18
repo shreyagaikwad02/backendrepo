@@ -18,7 +18,7 @@
         "viewType": "server",
         "nodeType": "start",
         "name": "",
-        "path": "login",
+        "path": "emp/login",
         "uploadpath": "",
         "summary": "",
         "description": "",
@@ -64,7 +64,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "login_api",
-        "functionName": "sd_GUNAZinzDwfQmLMS"
+        "functionName": "sd_GUNAZinzDwfQmLMS",
+        "generated": false
     },
     {
         "id": "sd_7AJ12X5C1XV9X4kF",
@@ -211,9 +212,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
+        "generated": true,
         "generateNext": false,
-        "serviceName": "login_api",
-        "generated": true
+        "serviceName": "login_api"
     },
     {
         "id": "sd_bF3VHgFFbFN9Xxm0",

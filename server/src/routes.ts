@@ -1,4 +1,6 @@
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-empDetails_api-SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy
+import { empDetails_api as SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy } from './sd-services/empDetails/empDetails_api';
 //CORE_REFERENCE_IMPORT-signupService-SSD_SERVICE_ID_sd_rcOv6fz249JvyeYM
 import { signupService as SSD_SERVICE_ID_sd_rcOv6fz249JvyeYM } from './sd-services/signup/signupService';
 //CORE_REFERENCE_IMPORT-signup_api-SSD_SERVICE_ID_sd_CyiVn5og68WpMPuY
@@ -9,7 +11,9 @@ import { loginService as SSD_SERVICE_ID_sd_z9qNdaMuIxfdDfzE } from './sd-service
 import { login_api as SSD_SERVICE_ID_sd_pnvwTXMjkLPZ7X06 } from './sd-services/login/login_api';
 
 export const UserRoutes = [
-    //CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY
+//CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY
+//CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-empDetails_api-SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy
+SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy,
 //CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-signupService-SSD_SERVICE_ID_sd_rcOv6fz249JvyeYM
 SSD_SERVICE_ID_sd_rcOv6fz249JvyeYM,
 //CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-signup_api-SSD_SERVICE_ID_sd_CyiVn5og68WpMPuY

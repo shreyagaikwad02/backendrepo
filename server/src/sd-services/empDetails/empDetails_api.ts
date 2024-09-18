@@ -8,7 +8,7 @@ import { TracerService } from '../../services/TracerService'; //_splitter_
 import log from '../../utils/Logger'; //_splitter_
 import { GenericRDBMSOperations } from '../../utils/ndefault-sql/ExecuteSql/GenericRDBMSOperations'; //_splitter_
 //append_imports_end
-export class signupService {
+export class empDetails_api {
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -24,7 +24,7 @@ export class signupService {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'signupService';
+    this.serviceName = 'empDetails_api';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -39,7 +39,7 @@ export class signupService {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new signupService(
+      instance = new empDetails_api(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -68,38 +68,56 @@ export class signupService {
   }
 
   async mountTimers() {
-    //appendnew_flow_signupService_TimerStart
+    //appendnew_flow_empDetails_api_TimerStart
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: signupService');
-    //appendnew_flow_signupService_MiddlewareStart
+    log.debug('mounting all middlewares for service :: empDetails_api');
+    //appendnew_flow_empDetails_api_MiddlewareStart
   }
 
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: signupService');
-    //appendnew_flow_signupService_HttpIn
+    log.debug('mounting all paths for service :: empDetails_api');
+    //appendnew_flow_empDetails_api_HttpIn
   }
-  //   service flows_signupService
+  //   service flows_empDetails_api
 
-  async userService(
+  async saveempdetails(
     parentSpanInst,
-    password: any = undefined,
-    confirmpassword: any = undefined,
-    isError: any = undefined,
-    userName: any = undefined,
+    fname: any = undefined,
+    lname: any = undefined,
+    dob: any = undefined,
+    qualification: any = undefined,
+    gender: any = undefined,
+    address: any = undefined,
+    phone: any = undefined,
+    referencephone: any = undefined,
+    identycard: any = undefined,
+    email: any = undefined,
+    passbook: any = undefined,
+    experienceletter: any = undefined,
+    educationcertificate: any = undefined,
     ...others
   ) {
     const spanInst = this.tracerService.createSpan(
-      'userService',
+      'saveempdetails',
       parentSpanInst
     );
     let bh: any = {
       input: {
-        password,
-        confirmpassword,
-        isError,
-        userName,
+        fname,
+        lname,
+        dob,
+        qualification,
+        gender,
+        address,
+        phone,
+        referencephone,
+        identycard,
+        email,
+        passbook,
+        experienceletter,
+        educationcertificate,
       },
       local: {
         outputMapping: undefined,
@@ -108,14 +126,12 @@ export class signupService {
     try {
       bh = this.sdService.__constructDefault(bh);
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_wm1DGbhnjyKmlQOA(bh, parentSpanInst);
-      //appendnew_next_userService
+      bh = await this.sd_ITPhb2foDv7UXhea(bh, parentSpanInst);
+      //appendnew_next_saveempdetails
       return (
         // formatting output variables
         {
-          input: {
-            isError: bh.input.isError,
-          },
+          input: {},
           local: {
             outputMapping: bh.local.outputMapping,
           },
@@ -125,51 +141,91 @@ export class signupService {
       return await this.errorHandler(
         bh,
         e,
-        'sd_lDWUQsxmaYzT5q92',
+        'sd_SzTdhiBVBTE6yjHJ',
         spanInst,
-        'userService'
+        'saveempdetails'
       );
     }
   }
-  //appendnew_flow_signupService_start
 
-  async sd_wm1DGbhnjyKmlQOA(bh, parentSpanInst) {
+  async getempdetails(parentSpanInst, username: any = undefined, ...others) {
     const spanInst = this.tracerService.createSpan(
-      'sd_wm1DGbhnjyKmlQOA',
+      'getempdetails',
+      parentSpanInst
+    );
+    let bh: any = {
+      input: {
+        username,
+      },
+      local: {
+        outputMapping: undefined,
+      },
+    };
+    try {
+      bh = this.sdService.__constructDefault(bh);
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_T2BHwvl9yJlAE7iW(bh, parentSpanInst);
+      //appendnew_next_getempdetails
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {
+            outputMapping: bh.local.outputMapping,
+          },
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_X5KxqUhGLBHAOKNb',
+        spanInst,
+        'getempdetails'
+      );
+    }
+  }
+  //appendnew_flow_empDetails_api_start
+
+  async sd_ITPhb2foDv7UXhea(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_ITPhb2foDv7UXhea',
       parentSpanInst
     );
     try {
-      bh.input.credentials = `INSERT INTO empdetails (userName, password) VALUES (
-    '${bh.input.userName}', 
-    '${bh.input.password}'
-    )`;
-
-      bh.input.checkcondition = {
-        userName: bh.input.userName,
-      };
-
-      bh.signupquery = `INSERT INTO empdetails (userName, password) VALUES (
-    '${bh.input.userName}', 
-    '${bh.input.password}'
-    )`;
+      bh.input.empDetails = `INSERT INTO empDetails 
+(fname, lname, qualification, dob, gender, phone, referencephone, address, email, passbook, identycard, experienceLetter, educationCertificates)
+VALUES ('${bh.input.email}', 
+    '${bh.input.address}',
+    '${bh.input.dob}', 
+    '${bh.input.passbook}',
+    '${bh.input.qualification}', 
+    '${bh.input.referencephone},
+    '${bh.input.phone}', 
+    '${bh.input.gender}',
+    '${bh.input.fname}', 
+    '${bh.input.lname}',
+    '${bh.input.educationCertificates}',
+    '${bh.input.identycard}',
+    '${bh.input.experienceLetter}')`;
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_elQwBoDHnm6AYC6w(bh, parentSpanInst);
-      //appendnew_next_sd_wm1DGbhnjyKmlQOA
+      bh = await this.sd_T9E9cTaDF0yzSJWV(bh, parentSpanInst);
+      //appendnew_next_sd_ITPhb2foDv7UXhea
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_wm1DGbhnjyKmlQOA',
+        'sd_ITPhb2foDv7UXhea',
         spanInst,
-        'sd_wm1DGbhnjyKmlQOA'
+        'sd_ITPhb2foDv7UXhea'
       );
     }
   }
 
-  async sd_elQwBoDHnm6AYC6w(bh, parentSpanInst) {
+  async sd_T9E9cTaDF0yzSJWV(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_elQwBoDHnm6AYC6w',
+      'sd_T9E9cTaDF0yzSJWV',
       parentSpanInst
     );
     try {
@@ -191,102 +247,50 @@ export class signupService {
       params = params ? params : [];
       bh.local.outputMapping = await new GenericRDBMSOperations().executeSQL(
         connectionName,
-        bh.input.signupquery,
+        bh.input.empDetails,
         params
       );
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_0DiKKHjn3g5CsFrA(bh, parentSpanInst);
-      //appendnew_next_sd_elQwBoDHnm6AYC6w
+      //appendnew_next_sd_T9E9cTaDF0yzSJWV
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_elQwBoDHnm6AYC6w',
+        'sd_T9E9cTaDF0yzSJWV',
         spanInst,
-        'sd_elQwBoDHnm6AYC6w'
+        'sd_T9E9cTaDF0yzSJWV'
       );
     }
   }
 
-  async sd_0DiKKHjn3g5CsFrA(bh, parentSpanInst) {
+  async sd_T2BHwvl9yJlAE7iW(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_0DiKKHjn3g5CsFrA',
+      'sd_T2BHwvl9yJlAE7iW',
       parentSpanInst
     );
     try {
-      console.log('result', bh.local.outputMapping);
+      bh.local.data = {
+        empID: 110,
+      };
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_NCF7x6UpaBQrrwkp(bh, parentSpanInst);
-      //appendnew_next_sd_0DiKKHjn3g5CsFrA
+      bh = await this.sd_mtBqwGqLpO7n3Z4l(bh, parentSpanInst);
+      //appendnew_next_sd_T2BHwvl9yJlAE7iW
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_0DiKKHjn3g5CsFrA',
+        'sd_T2BHwvl9yJlAE7iW',
         spanInst,
-        'sd_0DiKKHjn3g5CsFrA'
+        'sd_T2BHwvl9yJlAE7iW'
       );
     }
   }
 
-  async sd_NCF7x6UpaBQrrwkp(bh, parentSpanInst) {
+  async sd_mtBqwGqLpO7n3Z4l(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_NCF7x6UpaBQrrwkp',
-      parentSpanInst
-    );
-    try {
-      if (
-        this.sdService.operators['empty'](
-          bh.local.outputMapping,
-          undefined,
-          undefined,
-          undefined
-        )
-      ) {
-        bh = await this.sd_X9eTtVetJpJxnmSE(bh, parentSpanInst);
-      } else {
-        bh = await this.sd_N71c3cdFh2mfe34T(bh, parentSpanInst);
-      }
-      this.tracerService.sendData(spanInst, bh);
-
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_NCF7x6UpaBQrrwkp',
-        spanInst,
-        'sd_NCF7x6UpaBQrrwkp'
-      );
-    }
-  }
-
-  async sd_N71c3cdFh2mfe34T(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_N71c3cdFh2mfe34T',
-      parentSpanInst
-    );
-    try {
-      bh.local.outputMapping = 'Already Exist';
-      this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_N71c3cdFh2mfe34T
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_N71c3cdFh2mfe34T',
-        spanInst,
-        'sd_N71c3cdFh2mfe34T'
-      );
-    }
-  }
-
-  async sd_X9eTtVetJpJxnmSE(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_X9eTtVetJpJxnmSE',
+      'sd_mtBqwGqLpO7n3Z4l',
       parentSpanInst
     );
     try {
@@ -306,45 +310,21 @@ export class signupService {
       }
       let params = [];
       params = params ? params : [];
-      bh.local.empResult = await new GenericRDBMSOperations().executeSQL(
+      bh.local.outputMapping = await new GenericRDBMSOperations().executeSQL(
         connectionName,
-        bh.input.credentials,
+        bh.local.data,
         params
       );
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_Gylu5Tdgxp1hfrtu(bh, parentSpanInst);
-      //appendnew_next_sd_X9eTtVetJpJxnmSE
+      //appendnew_next_sd_mtBqwGqLpO7n3Z4l
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_X9eTtVetJpJxnmSE',
+        'sd_mtBqwGqLpO7n3Z4l',
         spanInst,
-        'sd_X9eTtVetJpJxnmSE'
-      );
-    }
-  }
-
-  async sd_Gylu5Tdgxp1hfrtu(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_Gylu5Tdgxp1hfrtu',
-      parentSpanInst
-    );
-    try {
-      bh.local.outputMapping = bh.local.empResult;
-
-      console.log('outputmapping', bh.local.outputMapping);
-      this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_Gylu5Tdgxp1hfrtu
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_Gylu5Tdgxp1hfrtu',
-        spanInst,
-        'sd_Gylu5Tdgxp1hfrtu'
+        'sd_mtBqwGqLpO7n3Z4l'
       );
     }
   }
@@ -370,5 +350,5 @@ export class signupService {
       throw e;
     }
   }
-  //appendnew_flow_signupService_Catch
+  //appendnew_flow_empDetails_api_Catch
 }

@@ -1,5 +1,5 @@
 {
-    "/login": {
+    "/emp/login": {
         "post": {
             "summary": "",
             "description": "",

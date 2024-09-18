@@ -1,14 +1,272 @@
 [
     {
-        "type": "tab",
         "id": "SSD_SERVICE_ID_sd_rcOv6fz249JvyeYM",
+        "type": "tab",
+        "createdDate": "2024-09-17T10:18:34.436Z",
+        "label": "signupService",
         "disabled": false,
         "info": "",
-        "label": "signupService",
-        "createdDate": "2024-09-17T10:18:34.436Z",
         "functionSeq": 0,
         "generateNext": true,
         "serviceName": "signupService",
         "relativeParentPath": "signup"
+    },
+    {
+        "id": "sd_lDWUQsxmaYzT5q92",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_rcOv6fz249JvyeYM",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "userService",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "password",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "confirmpassword",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "isError",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            },
+            {
+                "key": "userName",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "outputMapping",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "userService",
+        "category": "General",
+        "x": 80,
+        "y": 180,
+        "wires": [
+            [
+                "sd_wm1DGbhnjyKmlQOA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "signupService"
+    },
+    {
+        "id": "sd_wm1DGbhnjyKmlQOA",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_rcOv6fz249JvyeYM",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.credentials=`INSERT INTO empdetails (userName, password) VALUES (\n    '${bh.input.userName}', \n    '${bh.input.password}'\n    )`;\n\nbh.input.checkcondition= {\n    userName : bh.input.userName,\n}\n\n bh.signupquery = `INSERT INTO empdetails (userName, password) VALUES (\n    '${bh.input.userName}', \n    '${bh.input.password}'\n    )`;",
+        "functionName": "sd_wm1DGbhnjyKmlQOA",
+        "category": "Function",
+        "x": 185,
+        "y": 180,
+        "wires": [
+            [
+                "sd_elQwBoDHnm6AYC6w"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "signupService",
+        "generated": true
+    },
+    {
+        "id": "sd_elQwBoDHnm6AYC6w",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_rcOv6fz249JvyeYM",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_GE6Vsx1TRqmkFScc",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "outputMapping"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.input",
+            "value": "signupquery"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "mysql",
+        "functionName": "sd_elQwBoDHnm6AYC6w",
+        "category": "Storage",
+        "x": 285,
+        "y": 180,
+        "wires": [
+            [
+                "sd_0DiKKHjn3g5CsFrA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "signupService",
+        "generated": true
+    },
+    {
+        "id": "sd_0DiKKHjn3g5CsFrA",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_rcOv6fz249JvyeYM",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"result\", bh.local.outputMapping);",
+        "functionName": "sd_0DiKKHjn3g5CsFrA",
+        "category": "Function",
+        "x": 400,
+        "y": 180,
+        "wires": [
+            [
+                "sd_NCF7x6UpaBQrrwkp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "signupService",
+        "generated": true
+    },
+    {
+        "id": "sd_NCF7x6UpaBQrrwkp",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_rcOv6fz249JvyeYM",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "outputMapping",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.outputMapping",
+        "rules": [
+            {
+                "t": "else"
+            },
+            {
+                "t": "empty"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_NCF7x6UpaBQrrwkp",
+        "category": "Function",
+        "x": 500,
+        "y": 180,
+        "wires": [
+            [
+                "sd_N71c3cdFh2mfe34T"
+            ],
+            [
+                "sd_X9eTtVetJpJxnmSE"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "signupService",
+        "generated": true
+    },
+    {
+        "id": "sd_N71c3cdFh2mfe34T",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_rcOv6fz249JvyeYM",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.outputMapping = \"Already Exist\"",
+        "functionName": "sd_N71c3cdFh2mfe34T",
+        "category": "Function",
+        "x": 625,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "signupService",
+        "generated": true
+    },
+    {
+        "id": "sd_X9eTtVetJpJxnmSE",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_rcOv6fz249JvyeYM",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_GE6Vsx1TRqmkFScc",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "empResult"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.input",
+            "value": "credentials"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "mysql",
+        "functionName": "sd_X9eTtVetJpJxnmSE",
+        "category": "Storage",
+        "x": 585,
+        "y": 260,
+        "wires": [
+            [
+                "sd_Gylu5Tdgxp1hfrtu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "signupService",
+        "generated": true
+    },
+    {
+        "id": "sd_Gylu5Tdgxp1hfrtu",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_rcOv6fz249JvyeYM",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.outputMapping=bh.local.empResult\n\nconsole.log(\"outputmapping\",bh.local.outputMapping)",
+        "functionName": "sd_Gylu5Tdgxp1hfrtu",
+        "category": "Function",
+        "x": 685,
+        "y": 260,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "signupService",
+        "generated": true
     }
 ]
