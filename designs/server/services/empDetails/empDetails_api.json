@@ -1,304 +1,500 @@
 [
     {
-        "id": "SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy",
+        "id": "SSD_SERVICE_ID_sd_1FTGO2OGzxB8kqeI",
         "type": "tab",
-        "createdDate": "2024-09-18T10:16:58.187Z",
-        "label": "empDetails_api",
+        "createdDate": "2024-09-19T06:52:02.130Z",
+        "label": "empdetails_api",
         "disabled": false,
         "info": "",
         "functionSeq": 0,
         "generateNext": true,
-        "serviceName": "empDetails_api",
+        "serviceName": "empdetails_api",
         "relativeParentPath": "empDetails"
     },
     {
-        "id": "sd_SzTdhiBVBTE6yjHJ",
-        "type": "Start",
-        "z": "SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy",
-        "viewType": "client-server",
+        "id": "sd_uQhe6Ynzu8IFQABe",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_1FTGO2OGzxB8kqeI",
+        "viewType": "server",
         "nodeType": "start",
-        "name": "saveempdetails",
+        "name": "saveEmpdetails",
+        "path": "empDetails/save",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
         "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "sd_QjkqJ9Ro9uEd8dpj"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "empdetails_api",
+        "functionName": "sd_uQhe6Ynzu8IFQABe",
+        "generated": false
+    },
+    {
+        "id": "sd_QjkqJ9Ro9uEd8dpj",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_1FTGO2OGzxB8kqeI",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.saveEmpDetails={\nfname:bh.input.body.fname,\nlname:bh.input.body.lname,\nqualification:bh.input.body.qualification,\ndob:bh.input.body.dob,\ngender:bh.input.body.gender,\nphone:bh.input.body.phone,\nreferencephone:bh.input.body.referencephone,\naddress:bh.input.body.address,\nemail:bh.input.body.email,\npassbook:bh.input.body.passbook,\nidentycard:bh.input.body.identycard,\nexperienceLetter:bh.input.body.experienceLetter,\neducationCertificates:bh.input.body.educationCertificates\n}",
+        "functionName": "sd_QjkqJ9Ro9uEd8dpj",
+        "category": "Function",
+        "x": 265,
+        "y": 160,
+        "wires": [
+            [
+                "sd_jDmHGGbn8mvimsay"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "empdetails_api",
+        "generated": true
+    },
+    {
+        "id": "sd_jDmHGGbn8mvimsay",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_1FTGO2OGzxB8kqeI",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy",
+            "type": "tab",
+            "createdDate": "2024-09-18T10:16:58.187Z",
+            "label": "empDetails_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_SzTdhiBVBTE6yjHJ",
+            "flowName": "saveEmpdetails"
+        },
         "inputVariables": [
             {
                 "key": "fname",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": false
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.fname"
             },
             {
                 "key": "lname",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": false
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.lname"
             },
             {
                 "key": "dob",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": false
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.dob"
             },
             {
                 "key": "qualification",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": false
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.qualification"
             },
             {
                 "key": "gender",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": false
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.gender"
             },
             {
                 "key": "address",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": false
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.address"
             },
             {
                 "key": "phone",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": false
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.phone"
             },
             {
                 "key": "referencephone",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": false
-            },
-            {
-                "key": "identycard",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": false
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.referencephone"
             },
             {
                 "key": "email",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": false
-            },
-            {
-                "key": "passbook",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": false
-            },
-            {
-                "key": "experienceletter",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": false
-            },
-            {
-                "key": "educationcertificate",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": false
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.email"
             }
         ],
-        "localVariables": [
+        "bhVariables": [],
+        "outputMapping": [
             {
+                "mapVarType": "local",
                 "key": "outputMapping",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": true
+                "valueType": "bh.local",
+                "value": "outputMapping",
+                "mapVarName": "outputMapping",
+                "localVar": "bh.local.outputMapping"
             }
+        ],
+        "callService": "./empDetails_service",
+        "startName": "saveEmpdetails",
+        "inputParams": [
+            "bh.input.body.fname",
+            "bh.input.body.lname",
+            "bh.input.body.dob",
+            "bh.input.body.qualification",
+            "bh.input.body.gender",
+            "bh.input.body.address",
+            "bh.input.body.phone",
+            "bh.input.body.referencephone",
+            "bh.input.body.email"
         ],
         "accept_bh": false,
-        "functionName": "saveempdetails",
+        "functionName": "sd_jDmHGGbn8mvimsay",
         "category": "General",
-        "x": 120,
-        "y": 180,
+        "x": 365,
+        "y": 160,
         "wires": [
             [
-                "sd_ITPhb2foDv7UXhea"
+                "sd_iCHwONu35oeHjlen"
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "empDetails_api"
+        "generated": true,
+        "generateNext": false,
+        "serviceName": "empdetails_api"
     },
     {
-        "id": "sd_ITPhb2foDv7UXhea",
+        "id": "sd_iCHwONu35oeHjlen",
         "type": "Script",
-        "z": "SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy",
+        "z": "SSD_SERVICE_ID_sd_1FTGO2OGzxB8kqeI",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.input.empDetails = `INSERT INTO empDetails \n(fname, lname, qualification, dob, gender, phone, referencephone, address, email, passbook, identycard, experienceLetter, educationCertificates)\nVALUES ('${bh.input.email}', \n    '${bh.input.address}',\n    '${bh.input.dob}', \n    '${bh.input.passbook}',\n    '${bh.input.qualification}', \n    '${bh.input.referencephone},\n    '${bh.input.phone}', \n    '${bh.input.gender}',\n    '${bh.input.fname}', \n    '${bh.input.lname}',\n    '${bh.input.educationCertificates}',\n    '${bh.input.identycard}',\n    '${bh.input.experienceLetter}')`;",
-        "functionName": "sd_ITPhb2foDv7UXhea",
+        "script": "bh.local.resultMapping={\n    code:200,\n    data: bh.local.outputMapping\n}",
+        "functionName": "sd_iCHwONu35oeHjlen",
         "category": "Function",
-        "x": 225,
-        "y": 180,
+        "x": 480,
+        "y": 160,
         "wires": [
             [
-                "sd_T9E9cTaDF0yzSJWV"
+                "sd_5gXnq3nxDc6qBpSB"
             ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "serviceName": "empDetails_api",
+        "serviceName": "empdetails_api",
         "generated": true
     },
     {
-        "id": "sd_T9E9cTaDF0yzSJWV",
-        "type": "ExecuteSql",
-        "z": "SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy",
+        "id": "sd_5gXnq3nxDc6qBpSB",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_1FTGO2OGzxB8kqeI",
         "viewType": "server",
         "nodeType": "flow",
         "name": "",
-        "databaseConfig": "sd_GE6Vsx1TRqmkFScc",
-        "resultMap": {
-            "type": "bh.local",
-            "value": "outputMapping"
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "resultMapping",
+            "ssd_typedInputField": true
         },
-        "multipleQuery": "",
-        "singleQuery": {
-            "type": "bh.input",
-            "value": "empDetails"
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
         },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.resultMapping",
+            "send": "bh.resultMapping"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
-        "outputs": 1,
-        "params": [],
-        "dbType": "mysql",
-        "functionName": "sd_T9E9cTaDF0yzSJWV",
-        "category": "Storage",
-        "x": 360,
-        "y": 180,
-        "wires": [
-            []
-        ],
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_5gXnq3nxDc6qBpSB",
+        "category": "HTTP",
+        "x": 620,
+        "y": 160,
+        "wires": [],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "serviceName": "empDetails_api",
+        "serviceName": "empdetails_api",
         "generated": true
     },
     {
-        "id": "sd_T2BHwvl9yJlAE7iW",
+        "id": "sd_qMdkgBRdvpy5iLrM",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_1FTGO2OGzxB8kqeI",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "getEmpdetails",
+        "path": "get/empDetails",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 140,
+        "y": 280,
+        "wires": [
+            [
+                "sd_TQIuRQyvbif5FT7e"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "empdetails_api",
+        "functionName": "sd_qMdkgBRdvpy5iLrM",
+        "generated": false
+    },
+    {
+        "id": "sd_5v32RaolFY4pZSUC",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_1FTGO2OGzxB8kqeI",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "resultMapping",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.resultMapping",
+            "send": "bh.local.resultMapping"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_5v32RaolFY4pZSUC",
+        "category": "HTTP",
+        "x": 640,
+        "y": 280,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "empdetails_api",
+        "generated": true
+    },
+    {
+        "id": "sd_TQIuRQyvbif5FT7e",
         "type": "Script",
-        "z": "SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy",
+        "z": "SSD_SERVICE_ID_sd_1FTGO2OGzxB8kqeI",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.local.data = {\n    empID:110\n}",
-        "functionName": "sd_T2BHwvl9yJlAE7iW",
+        "script": "",
+        "functionName": "sd_TQIuRQyvbif5FT7e",
         "category": "Function",
-        "x": 260,
-        "y": 300,
+        "x": 280,
+        "y": 280,
         "wires": [
             [
-                "sd_mtBqwGqLpO7n3Z4l"
+                "sd_Q2vtTA0ZiCFXVj10"
             ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "serviceName": "empDetails_api",
+        "serviceName": "empdetails_api",
         "generated": true
     },
     {
-        "id": "sd_X5KxqUhGLBHAOKNb",
-        "type": "Start",
-        "z": "SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy",
-        "viewType": "client-server",
-        "nodeType": "start",
-        "name": "getempdetails",
+        "id": "sd_CLJBdr6QTMuyTLLi",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_1FTGO2OGzxB8kqeI",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.resultMapping={\n    code:200,\n    data: bh.local.outputMapping\n}",
+        "functionName": "sd_CLJBdr6QTMuyTLLi",
+        "category": "Function",
+        "x": 500,
+        "y": 280,
+        "wires": [
+            [
+                "sd_5v32RaolFY4pZSUC"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "empdetails_api",
+        "generated": true
+    },
+    {
+        "id": "sd_Q2vtTA0ZiCFXVj10",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_1FTGO2OGzxB8kqeI",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
         "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy",
+            "type": "tab",
+            "createdDate": "2024-09-18T10:16:58.187Z",
+            "label": "empDetails_service",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_X5KxqUhGLBHAOKNb",
+            "flowName": "getempdetails"
+        },
         "inputVariables": [
             {
                 "key": "username",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": false
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body"
             }
         ],
-        "localVariables": [
+        "bhVariables": [],
+        "outputMapping": [
             {
+                "mapVarType": "local",
                 "key": "outputMapping",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": true
+                "valueType": "bh.local",
+                "value": "outputMapping",
+                "mapVarName": "outputMapping",
+                "localVar": "bh.local.outputMapping"
             }
+        ],
+        "callService": "./empDetails_service",
+        "startName": "getempdetails",
+        "inputParams": [
+            "bh.input.body"
         ],
         "accept_bh": false,
-        "functionName": "getempdetails",
+        "functionName": "sd_Q2vtTA0ZiCFXVj10",
         "category": "General",
-        "x": 125,
-        "y": 300,
+        "x": 400,
+        "y": 280,
         "wires": [
             [
-                "sd_T2BHwvl9yJlAE7iW"
+                "sd_CLJBdr6QTMuyTLLi"
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": true,
-        "serviceName": "empDetails_api"
-    },
-    {
-        "id": "sd_mtBqwGqLpO7n3Z4l",
-        "type": "ExecuteSql",
-        "z": "SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy",
-        "viewType": "server",
-        "nodeType": "flow",
-        "name": "",
-        "databaseConfig": "sd_GE6Vsx1TRqmkFScc",
-        "resultMap": {
-            "type": "bh.local",
-            "value": "outputMapping"
-        },
-        "multipleQuery": "",
-        "singleQuery": {
-            "type": "bh.local",
-            "value": "data"
-        },
-        "inputs": 1,
-        "outputs": 1,
-        "params": [],
-        "dbType": "mysql",
-        "functionName": "sd_mtBqwGqLpO7n3Z4l",
-        "category": "Storage",
-        "x": 380,
-        "y": 300,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "serviceName": "empDetails_api",
+        "serviceName": "empdetails_api",
         "generated": true
     }
 ]

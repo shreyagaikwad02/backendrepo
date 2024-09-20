@@ -1,0 +1,153 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_djbQbNBDCPzD2x2T",
+        "type": "tab",
+        "createdDate": "2024-09-18T18:45:52.578Z",
+        "label": "postempdetails",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "postempdetails",
+        "relativeParentPath": "employee"
+    },
+    {
+        "id": "sd_Ijt4ZFGZWqfgqjW0",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_djbQbNBDCPzD2x2T",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "postEmpDetails",
+        "path": "postEmpDetails",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "employeeDetails",
+                    "desc": "employeeDetails",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_yB219WZwyc1lUwx0",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 180,
+        "y": 200,
+        "wires": [
+            [
+                "sd_QMRq3qgWRPQ0wxkb"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "postempdetails",
+        "functionName": "sd_Ijt4ZFGZWqfgqjW0"
+    },
+    {
+        "id": "sd_QMRq3qgWRPQ0wxkb",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_djbQbNBDCPzD2x2T",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"calling post employee details api\")",
+        "functionName": "sd_QMRq3qgWRPQ0wxkb",
+        "category": "Function",
+        "x": 300,
+        "y": 200,
+        "wires": [
+            [
+                "sd_YpJBM6wqVYUsO5it"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "postempdetails",
+        "generated": true
+    },
+    {
+        "id": "sd_YpJBM6wqVYUsO5it",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_djbQbNBDCPzD2x2T",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "literal",
+            "value": "{message:\"success\",data:[]}",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "{message:\"success\",data:[]}",
+            "send": "{message:\"success\",data:[]}"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_YpJBM6wqVYUsO5it",
+        "category": "HTTP",
+        "x": 425,
+        "y": 200,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "postempdetails",
+        "generated": true
+    }
+]

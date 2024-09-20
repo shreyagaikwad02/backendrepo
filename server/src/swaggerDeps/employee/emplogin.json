@@ -1,18 +1,25 @@
 {
-    "/empDetails/save": {
+    "/emplogin": {
         "post": {
             "summary": "",
             "description": "",
             "consumes": [],
             "produces": [],
-            "parameters": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "credencials",
+                    "description": "userName&password",
+                    "required": false
+                }
+            ],
             "responses": {},
             "tags": [
-                "empdetails_api"
+                "emplogin"
             ]
         }
     },
-    "/get/empDetails": {
+    "/empWrongUser": {
         "post": {
             "summary": "",
             "description": "",
@@ -21,7 +28,7 @@
             "parameters": [],
             "responses": {},
             "tags": [
-                "empdetails_api"
+                "emplogin"
             ]
         }
     }

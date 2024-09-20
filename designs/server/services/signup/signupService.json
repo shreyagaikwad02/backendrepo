@@ -21,7 +21,7 @@
         "outputs": 1,
         "inputVariables": [
             {
-                "key": "password",
+                "key": "newpassword",
                 "defaultValue": {
                     "type": "any",
                     "value": ""
@@ -29,7 +29,7 @@
                 "output": false
             },
             {
-                "key": "confirmpassword",
+                "key": "confirmPassword",
                 "defaultValue": {
                     "type": "any",
                     "value": ""
@@ -84,7 +84,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.input.credentials=`INSERT INTO empdetails (userName, password) VALUES (\n    '${bh.input.userName}', \n    '${bh.input.password}'\n    )`;\n\nbh.input.checkcondition= {\n    userName : bh.input.userName,\n}\n\n bh.signupquery = `INSERT INTO empdetails (userName, password) VALUES (\n    '${bh.input.userName}', \n    '${bh.input.password}'\n    )`;",
+        "script": "bh.input.credentials=`INSERT INTO empdetails (userName, password) VALUES (\n    '${bh.input.userName}', \n    '${bh.input.confirmPassword}')`;\n\nbh.input.checkcondition= {\n    userName : bh.input.userName,\n}\n\n bh.input.signupquery = `INSERT INTO empdetails (userName, password) VALUES (\n    '${bh.input.userName}', \n    '${bh.input.confirmPassword}'\n    )`;",
         "functionName": "sd_wm1DGbhnjyKmlQOA",
         "category": "Function",
         "x": 185,
@@ -107,6 +107,7 @@
         "nodeType": "flow",
         "name": "",
         "databaseConfig": "sd_GE6Vsx1TRqmkFScc",
+        "queryType": "",
         "resultMap": {
             "type": "bh.local",
             "value": "outputMapping"
@@ -119,6 +120,7 @@
         "inputs": 1,
         "outputs": 1,
         "params": [],
+        "paramMappingObj": {},
         "dbType": "mysql",
         "functionName": "sd_elQwBoDHnm6AYC6w",
         "category": "Storage",
@@ -168,13 +170,13 @@
         "propertyGv": "bh.local.outputMapping",
         "rules": [
             {
-                "t": "else"
+                "t": "empty"
             },
             {
-                "t": "empty"
+                "t": "else"
             }
         ],
-        "checkall": "false",
+        "checkall": "true",
         "repair": false,
         "outputs": 2,
         "functionName": "sd_NCF7x6UpaBQrrwkp",
@@ -222,6 +224,7 @@
         "nodeType": "flow",
         "name": "",
         "databaseConfig": "sd_GE6Vsx1TRqmkFScc",
+        "queryType": "",
         "resultMap": {
             "type": "bh.local",
             "value": "empResult"
@@ -234,6 +237,7 @@
         "inputs": 1,
         "outputs": 1,
         "params": [],
+        "paramMappingObj": {},
         "dbType": "mysql",
         "functionName": "sd_X9eTtVetJpJxnmSE",
         "category": "Storage",

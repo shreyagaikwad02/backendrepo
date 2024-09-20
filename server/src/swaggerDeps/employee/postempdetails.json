@@ -1,0 +1,22 @@
+{
+    "/postEmpDetails": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "employeeDetails",
+                    "description": "employeeDetails",
+                    "required": false
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "postempdetails"
+            ]
+        }
+    }
+}

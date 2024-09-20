@@ -3,12 +3,13 @@ let instance = null;
 //CORE_REFERENCE_IMPORTS
 //append_imports_start
 
+import * as cookieParser from 'cookie-parser'; //_splitter_
 import { SDBaseService } from '../../services/SDBaseService'; //_splitter_
 import { TracerService } from '../../services/TracerService'; //_splitter_
 import log from '../../utils/Logger'; //_splitter_
-import { GenericRDBMSOperations } from '../../utils/ndefault-sql/ExecuteSql/GenericRDBMSOperations'; //_splitter_
+import * as SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy from './empDetails_service'; //_splitter_
 //append_imports_end
-export class empDetails_api {
+export class empdetails_api {
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -24,7 +25,7 @@ export class empDetails_api {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'empDetails_api';
+    this.serviceName = 'empdetails_api';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -39,7 +40,7 @@ export class empDetails_api {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new empDetails_api(
+      instance = new empdetails_api(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -68,264 +69,278 @@ export class empDetails_api {
   }
 
   async mountTimers() {
-    //appendnew_flow_empDetails_api_TimerStart
+    //appendnew_flow_empdetails_api_TimerStart
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: empDetails_api');
-    //appendnew_flow_empDetails_api_MiddlewareStart
+    log.debug('mounting all middlewares for service :: empdetails_api');
+    //appendnew_flow_empdetails_api_MiddlewareStart
   }
 
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: empDetails_api');
-    //appendnew_flow_empDetails_api_HttpIn
-  }
-  //   service flows_empDetails_api
+    log.debug('mounting all paths for service :: empdetails_api');
 
-  async saveempdetails(
-    parentSpanInst,
-    fname: any = undefined,
-    lname: any = undefined,
-    dob: any = undefined,
-    qualification: any = undefined,
-    gender: any = undefined,
-    address: any = undefined,
-    phone: any = undefined,
-    referencephone: any = undefined,
-    identycard: any = undefined,
-    email: any = undefined,
-    passbook: any = undefined,
-    experienceletter: any = undefined,
-    educationcertificate: any = undefined,
-    ...others
-  ) {
-    const spanInst = this.tracerService.createSpan(
-      'saveempdetails',
-      parentSpanInst
-    );
-    let bh: any = {
-      input: {
-        fname,
-        lname,
-        dob,
-        qualification,
-        gender,
-        address,
-        phone,
-        referencephone,
-        identycard,
-        email,
-        passbook,
-        experienceletter,
-        educationcertificate,
-      },
-      local: {
-        outputMapping: undefined,
-      },
-    };
-    try {
-      bh = this.sdService.__constructDefault(bh);
-      this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_ITPhb2foDv7UXhea(bh, parentSpanInst);
-      //appendnew_next_saveempdetails
-      return (
-        // formatting output variables
-        {
-          input: {},
-          local: {
-            outputMapping: bh.local.outputMapping,
-          },
+    this.app['post'](
+      `${this.serviceBasePath}/empDetails/save`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_QjkqJ9Ro9uEd8dpj(bh, parentSpanInst);
+          //appendnew_next_sd_uQhe6Ynzu8IFQABe
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_uQhe6Ynzu8IFQABe');
         }
-      );
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_SzTdhiBVBTE6yjHJ',
-        spanInst,
-        'saveempdetails'
-      );
-    }
-  }
-
-  async getempdetails(parentSpanInst, username: any = undefined, ...others) {
-    const spanInst = this.tracerService.createSpan(
-      'getempdetails',
-      parentSpanInst
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
     );
-    let bh: any = {
-      input: {
-        username,
-      },
-      local: {
-        outputMapping: undefined,
-      },
-    };
-    try {
-      bh = this.sdService.__constructDefault(bh);
-      this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_T2BHwvl9yJlAE7iW(bh, parentSpanInst);
-      //appendnew_next_getempdetails
-      return (
-        // formatting output variables
-        {
-          input: {},
-          local: {
-            outputMapping: bh.local.outputMapping,
-          },
+
+    this.app['post'](
+      `${this.serviceBasePath}/get/empDetails`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_TQIuRQyvbif5FT7e(bh, parentSpanInst);
+          //appendnew_next_sd_qMdkgBRdvpy5iLrM
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_qMdkgBRdvpy5iLrM');
         }
-      );
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_X5KxqUhGLBHAOKNb',
-        spanInst,
-        'getempdetails'
-      );
-    }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
+    //appendnew_flow_empdetails_api_HttpIn
   }
-  //appendnew_flow_empDetails_api_start
+  //   service flows_empdetails_api
 
-  async sd_ITPhb2foDv7UXhea(bh, parentSpanInst) {
+  //appendnew_flow_empdetails_api_start
+
+  async sd_QjkqJ9Ro9uEd8dpj(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_ITPhb2foDv7UXhea',
+      'sd_QjkqJ9Ro9uEd8dpj',
       parentSpanInst
     );
     try {
-      bh.input.empDetails = `INSERT INTO empDetails 
-(fname, lname, qualification, dob, gender, phone, referencephone, address, email, passbook, identycard, experienceLetter, educationCertificates)
-VALUES ('${bh.input.email}', 
-    '${bh.input.address}',
-    '${bh.input.dob}', 
-    '${bh.input.passbook}',
-    '${bh.input.qualification}', 
-    '${bh.input.referencephone},
-    '${bh.input.phone}', 
-    '${bh.input.gender}',
-    '${bh.input.fname}', 
-    '${bh.input.lname}',
-    '${bh.input.educationCertificates}',
-    '${bh.input.identycard}',
-    '${bh.input.experienceLetter}')`;
-      this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_T9E9cTaDF0yzSJWV(bh, parentSpanInst);
-      //appendnew_next_sd_ITPhb2foDv7UXhea
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_ITPhb2foDv7UXhea',
-        spanInst,
-        'sd_ITPhb2foDv7UXhea'
-      );
-    }
-  }
-
-  async sd_T9E9cTaDF0yzSJWV(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_T9E9cTaDF0yzSJWV',
-      parentSpanInst
-    );
-    try {
-      let configObj = this.sdService.getConfigObj(
-        'db-config',
-        'sd_GE6Vsx1TRqmkFScc'
-      );
-      let connectionName;
-      if (
-        configObj &&
-        configObj.hasOwnProperty('dbOption') &&
-        configObj.dbOption.hasOwnProperty('name')
-      ) {
-        connectionName = configObj.dbOption.name;
-      } else {
-        throw new Error('Cannot find the selected config name');
-      }
-      let params = [];
-      params = params ? params : [];
-      bh.local.outputMapping = await new GenericRDBMSOperations().executeSQL(
-        connectionName,
-        bh.input.empDetails,
-        params
-      );
-      this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_T9E9cTaDF0yzSJWV
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_T9E9cTaDF0yzSJWV',
-        spanInst,
-        'sd_T9E9cTaDF0yzSJWV'
-      );
-    }
-  }
-
-  async sd_T2BHwvl9yJlAE7iW(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_T2BHwvl9yJlAE7iW',
-      parentSpanInst
-    );
-    try {
-      bh.local.data = {
-        empID: 110,
+      bh.local.saveEmpDetails = {
+        fname: bh.input.body.fname,
+        lname: bh.input.body.lname,
+        qualification: bh.input.body.qualification,
+        dob: bh.input.body.dob,
+        gender: bh.input.body.gender,
+        phone: bh.input.body.phone,
+        referencephone: bh.input.body.referencephone,
+        address: bh.input.body.address,
+        email: bh.input.body.email,
+        passbook: bh.input.body.passbook,
+        identycard: bh.input.body.identycard,
+        experienceLetter: bh.input.body.experienceLetter,
+        educationCertificates: bh.input.body.educationCertificates,
       };
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_mtBqwGqLpO7n3Z4l(bh, parentSpanInst);
-      //appendnew_next_sd_T2BHwvl9yJlAE7iW
+      bh = await this.sd_jDmHGGbn8mvimsay(bh, parentSpanInst);
+      //appendnew_next_sd_QjkqJ9Ro9uEd8dpj
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_T2BHwvl9yJlAE7iW',
+        'sd_QjkqJ9Ro9uEd8dpj',
         spanInst,
-        'sd_T2BHwvl9yJlAE7iW'
+        'sd_QjkqJ9Ro9uEd8dpj'
       );
     }
   }
 
-  async sd_mtBqwGqLpO7n3Z4l(bh, parentSpanInst) {
+  async sd_jDmHGGbn8mvimsay(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_mtBqwGqLpO7n3Z4l',
+      'sd_jDmHGGbn8mvimsay',
       parentSpanInst
     );
     try {
-      let configObj = this.sdService.getConfigObj(
-        'db-config',
-        'sd_GE6Vsx1TRqmkFScc'
-      );
-      let connectionName;
-      if (
-        configObj &&
-        configObj.hasOwnProperty('dbOption') &&
-        configObj.dbOption.hasOwnProperty('name')
-      ) {
-        connectionName = configObj.dbOption.name;
-      } else {
-        throw new Error('Cannot find the selected config name');
-      }
-      let params = [];
-      params = params ? params : [];
-      bh.local.outputMapping = await new GenericRDBMSOperations().executeSQL(
-        connectionName,
-        bh.local.data,
-        params
-      );
+      const SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPyInstance: SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy.empDetails_service =
+        SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy.empDetails_service.getInstance();
+      let outputVariables =
+        await SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPyInstance.saveEmpdetails(
+          spanInst,
+          bh.input.body.fname,
+          bh.input.body.lname,
+          bh.input.body.dob,
+          bh.input.body.qualification,
+          bh.input.body.gender,
+          bh.input.body.address,
+          bh.input.body.phone,
+          bh.input.body.referencephone,
+          bh.input.body.email
+        );
+      bh.local.outputMapping = outputVariables.local.outputMapping;
+
       this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_mtBqwGqLpO7n3Z4l
+      bh = await this.sd_iCHwONu35oeHjlen(bh, parentSpanInst);
+      //appendnew_next_sd_jDmHGGbn8mvimsay
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_mtBqwGqLpO7n3Z4l',
+        'sd_jDmHGGbn8mvimsay',
         spanInst,
-        'sd_mtBqwGqLpO7n3Z4l'
+        'sd_jDmHGGbn8mvimsay'
       );
+    }
+  }
+
+  async sd_iCHwONu35oeHjlen(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_iCHwONu35oeHjlen',
+      parentSpanInst
+    );
+    try {
+      bh.local.resultMapping = {
+        code: 200,
+        data: bh.local.outputMapping,
+      };
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_5gXnq3nxDc6qBpSB(bh, parentSpanInst);
+      //appendnew_next_sd_iCHwONu35oeHjlen
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_iCHwONu35oeHjlen',
+        spanInst,
+        'sd_iCHwONu35oeHjlen'
+      );
+    }
+  }
+
+  async sd_5gXnq3nxDc6qBpSB(bh, parentSpanInst) {
+    try {
+      bh.web.res.status(200).send(bh.resultMapping);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_5gXnq3nxDc6qBpSB');
+    }
+  }
+
+  async sd_TQIuRQyvbif5FT7e(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_TQIuRQyvbif5FT7e',
+      parentSpanInst
+    );
+    try {
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_Q2vtTA0ZiCFXVj10(bh, parentSpanInst);
+      //appendnew_next_sd_TQIuRQyvbif5FT7e
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_TQIuRQyvbif5FT7e',
+        spanInst,
+        'sd_TQIuRQyvbif5FT7e'
+      );
+    }
+  }
+
+  async sd_Q2vtTA0ZiCFXVj10(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_Q2vtTA0ZiCFXVj10',
+      parentSpanInst
+    );
+    try {
+      const SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPyInstance: SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy.empDetails_service =
+        SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy.empDetails_service.getInstance();
+      let outputVariables =
+        await SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPyInstance.getempdetails(
+          spanInst,
+          bh.input.body
+        );
+      bh.local.outputMapping = outputVariables.local.outputMapping;
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_CLJBdr6QTMuyTLLi(bh, parentSpanInst);
+      //appendnew_next_sd_Q2vtTA0ZiCFXVj10
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_Q2vtTA0ZiCFXVj10',
+        spanInst,
+        'sd_Q2vtTA0ZiCFXVj10'
+      );
+    }
+  }
+
+  async sd_CLJBdr6QTMuyTLLi(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_CLJBdr6QTMuyTLLi',
+      parentSpanInst
+    );
+    try {
+      bh.local.resultMapping = {
+        code: 200,
+        data: bh.local.outputMapping,
+      };
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_5v32RaolFY4pZSUC(bh, parentSpanInst);
+      //appendnew_next_sd_CLJBdr6QTMuyTLLi
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_CLJBdr6QTMuyTLLi',
+        spanInst,
+        'sd_CLJBdr6QTMuyTLLi'
+      );
+    }
+  }
+
+  async sd_5v32RaolFY4pZSUC(bh, parentSpanInst) {
+    try {
+      bh.web.res.status(200).send(bh.local.resultMapping);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_5v32RaolFY4pZSUC');
     }
   }
 
@@ -350,5 +365,5 @@ VALUES ('${bh.input.email}',
       throw e;
     }
   }
-  //appendnew_flow_empDetails_api_Catch
+  //appendnew_flow_empdetails_api_Catch
 }

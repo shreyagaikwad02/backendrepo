@@ -128,8 +128,8 @@ export class signup_api {
       let outputVariables =
         await SSD_SERVICE_ID_sd_rcOv6fz249JvyeYMInstance.userService(
           spanInst,
-          bh.input.body.password,
-          bh.input.body.confirmpassword,
+          bh.input.body.newpassword,
+          bh.input.body.confirmPassword,
           undefined,
           bh.input.body.userName
         );

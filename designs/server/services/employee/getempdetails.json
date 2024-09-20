@@ -1,0 +1,144 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_9BqucVGoiqyFt1wx",
+        "type": "tab",
+        "createdDate": "2024-09-18T18:33:21.091Z",
+        "label": "getempdetails",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "getempdetails",
+        "relativeParentPath": "employee"
+    },
+    {
+        "id": "sd_JXyuYOheHrjI4IN4",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_9BqucVGoiqyFt1wx",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "getEmpDetails",
+        "path": "getEmpDetails",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 125,
+        "y": 180,
+        "wires": [
+            [
+                "sd_GFyD84lmcwHijvZ8"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getempdetails",
+        "functionName": "sd_JXyuYOheHrjI4IN4"
+    },
+    {
+        "id": "sd_GFyD84lmcwHijvZ8",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_9BqucVGoiqyFt1wx",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"calling getempDetails\");",
+        "functionName": "sd_GFyD84lmcwHijvZ8",
+        "category": "Function",
+        "x": 240,
+        "y": 180,
+        "wires": [
+            [
+                "sd_kS7gvIzAX2nagI0t"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getempdetails",
+        "generated": true
+    },
+    {
+        "id": "sd_kS7gvIzAX2nagI0t",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_9BqucVGoiqyFt1wx",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "literal",
+            "value": "{\"message\":\"employee details successfully mapped\"}",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "{\"message\":\"employee details successfully mapped\"}",
+            "send": "{\"message\":\"employee details successfully mapped\"}"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_kS7gvIzAX2nagI0t",
+        "category": "HTTP",
+        "x": 360,
+        "y": 180,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getempdetails",
+        "generated": true
+    }
+]

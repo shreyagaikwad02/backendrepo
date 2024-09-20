@@ -1,0 +1,274 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy",
+        "type": "tab",
+        "createdDate": "2024-09-18T10:16:58.187Z",
+        "label": "empDetails_service",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "empDetails_service",
+        "relativeParentPath": "empDetails"
+    },
+    {
+        "id": "sd_SzTdhiBVBTE6yjHJ",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "saveEmpdetails",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "fname",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "lname",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "dob",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "qualification",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "gender",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "address",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "phone",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "referencephone",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "email",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "outputMapping",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "saveEmpdetails",
+        "category": "General",
+        "x": 120,
+        "y": 180,
+        "wires": [
+            [
+                "sd_ITPhb2foDv7UXhea"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "empDetails_service"
+    },
+    {
+        "id": "sd_ITPhb2foDv7UXhea",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\n\n// bh.input.empDetails = `INSERT INTO empDetails (fname, lname, qualification, dob, gender, phone, referencephone, address, email, passbook, identycard, experienceLetter, educationCertificates)\n// VALUES ('${bh.input.fname}','${bh.input.lname}','${bh.input.qualification}','${bh.input.dob}','${bh.input.gender}','${bh.input.phone},'${bh.input.referencephone}','${bh.input.address}','${bh.input.email}','iiuiu','34545','34454','33322')`;\n\nbh.input.empDetails=`INSERT INTO empDetails (fname, lname, qualification, dob, gender, phone, referencephone, address, email, passbook, identycard, experienceLetter, educationCertificates) VALUES ('harish123','porwal','MCA','2000/02/02','male',23456789 ,9876543768,'nsajhd hknsd nsa', 'hd1@gmail.com','23456','23456','345678','5678');`\n\n//   '${bh.input.identycard}',\n//${bh.input.passbook}\n//  '${bh.input.experienceLetter}',\n//  '${bh.input.educationCertificates}')`;\n\n\n\n\n  console.log(\"----------->\",bh.input.empDetails)",
+        "functionName": "sd_ITPhb2foDv7UXhea",
+        "category": "Function",
+        "x": 225,
+        "y": 180,
+        "wires": [
+            [
+                "sd_T9E9cTaDF0yzSJWV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "empDetails_service",
+        "generated": true
+    },
+    {
+        "id": "sd_T9E9cTaDF0yzSJWV",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_GE6Vsx1TRqmkFScc",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "outputMapping"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.input",
+            "value": "empDetails"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "mysql",
+        "functionName": "sd_T9E9cTaDF0yzSJWV",
+        "category": "Storage",
+        "x": 360,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "empDetails_service",
+        "generated": true
+    },
+    {
+        "id": "sd_T2BHwvl9yJlAE7iW",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.data = {\n    \"userName\" : \"harish\"\n}",
+        "functionName": "sd_T2BHwvl9yJlAE7iW",
+        "category": "Function",
+        "x": 245,
+        "y": 300,
+        "wires": [
+            [
+                "sd_mtBqwGqLpO7n3Z4l"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "empDetails_service",
+        "generated": true
+    },
+    {
+        "id": "sd_X5KxqUhGLBHAOKNb",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getempdetails",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "username",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "outputMapping",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getempdetails",
+        "category": "General",
+        "x": 125,
+        "y": 300,
+        "wires": [
+            [
+                "sd_T2BHwvl9yJlAE7iW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "empDetails_service"
+    },
+    {
+        "id": "sd_mtBqwGqLpO7n3Z4l",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_GE6Vsx1TRqmkFScc",
+        "queryType": "",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "outputMapping"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.local",
+            "value": "data"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "paramMappingObj": {},
+        "dbType": "mysql",
+        "functionName": "sd_mtBqwGqLpO7n3Z4l",
+        "category": "Storage",
+        "x": 365,
+        "y": 300,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "empDetails_service",
+        "generated": true
+    }
+]

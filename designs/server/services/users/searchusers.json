@@ -1,0 +1,160 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_qNTwNKRKGvvbDnuD",
+        "type": "tab",
+        "createdDate": "2024-09-18T17:08:12.614Z",
+        "label": "searchusers",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "searchusers",
+        "relativeParentPath": "users"
+    },
+    {
+        "id": "sd_PAuuB3KYBffrJ2Jb",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_qNTwNKRKGvvbDnuD",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "serchUsers",
+        "path": "users/search/:userId",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "region",
+                    "desc": "region",
+                    "type": "query",
+                    "required": false,
+                    "rowId": "sd_l9y9BceHl6V4Qjlq",
+                    "valid": true
+                },
+                {
+                    "key": "filter",
+                    "desc": "filtering configuration",
+                    "type": "body",
+                    "required": false,
+                    "rowId": "sd_lolXOgXszCKqlY0y",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 220,
+        "y": 200,
+        "wires": [
+            [
+                "sd_bVD3fDo3n8aygyNe"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "searchusers",
+        "functionName": "sd_PAuuB3KYBffrJ2Jb"
+    },
+    {
+        "id": "sd_bVD3fDo3n8aygyNe",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_qNTwNKRKGvvbDnuD",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(JSON.stringify(bh.input));",
+        "functionName": "sd_bVD3fDo3n8aygyNe",
+        "category": "Function",
+        "x": 325,
+        "y": 200,
+        "wires": [
+            [
+                "sd_uqnSMToGpxyWVRUl"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "searchusers",
+        "generated": true
+    },
+    {
+        "id": "sd_uqnSMToGpxyWVRUl",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_qNTwNKRKGvvbDnuD",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "literal",
+            "value": "{message:\"success\",data:[]}",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "{message:\"success\",data:[]}",
+            "send": "{message:\"success\",data:[]}"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_uqnSMToGpxyWVRUl",
+        "category": "HTTP",
+        "x": 440,
+        "y": 200,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "searchusers",
+        "generated": true
+    }
+]

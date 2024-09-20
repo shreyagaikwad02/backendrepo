@@ -1,0 +1,28 @@
+{
+    "/users/search/:userId": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "query",
+                    "name": "region",
+                    "description": "region",
+                    "required": false
+                },
+                {
+                    "in": "body",
+                    "name": "filter",
+                    "description": "filtering configuration",
+                    "required": false
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "searchusers"
+            ]
+        }
+    }
+}

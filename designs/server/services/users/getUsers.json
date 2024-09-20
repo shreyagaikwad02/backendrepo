@@ -1,0 +1,150 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_wSxhCj7d038aRgV3",
+        "type": "tab",
+        "createdDate": "2024-09-18T17:07:48.787Z",
+        "label": "getUsers",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "getUsers",
+        "relativeParentPath": "users"
+    },
+    {
+        "id": "sd_jBc4PtW1maPIQITK",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_wSxhCj7d038aRgV3",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "getUsers",
+        "path": "users",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 205,
+        "y": 140,
+        "wires": [
+            [
+                "sd_aQWe1ystVk6gTf36"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getUsers",
+        "functionName": "sd_jBc4PtW1maPIQITK"
+    },
+    {
+        "id": "sd_aQWe1ystVk6gTf36",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_wSxhCj7d038aRgV3",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.result={\n    data:\"success\",\n    statusCode:200\n}",
+        "functionName": "sd_aQWe1ystVk6gTf36",
+        "category": "Function",
+        "x": 325,
+        "y": 140,
+        "wires": [
+            [
+                "sd_6D5Cgn8ETNBbbKU0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getUsers",
+        "generated": true
+    },
+    {
+        "id": "sd_6D5Cgn8ETNBbbKU0",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_wSxhCj7d038aRgV3",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "get users response",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [
+                {
+                    "key": "application/json",
+                    "rowId": "sd_zDZB7rbnAwDJU6kd",
+                    "valid": true
+                }
+            ],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "getUsersResponse",
+        "category": "HTTP",
+        "x": 465,
+        "y": 140,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getUsers",
+        "generated": true
+    }
+]
