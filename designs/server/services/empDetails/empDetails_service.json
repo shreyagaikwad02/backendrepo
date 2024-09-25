@@ -124,7 +124,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\n\n// bh.input.empDetails = `INSERT INTO empDetails (fname, lname, qualification, dob, gender, phone, referencephone, address, email, passbook, identycard, experienceLetter, educationCertificates)\n// VALUES ('${bh.input.fname}','${bh.input.lname}','${bh.input.qualification}','${bh.input.dob}','${bh.input.gender}','${bh.input.phone},'${bh.input.referencephone}','${bh.input.address}','${bh.input.email}','iiuiu','34545','34454','33322')`;\n\nbh.input.empDetails=`INSERT INTO empDetails (fname, lname, qualification, dob, gender, phone, referencephone, address, email, passbook, identycard, experienceLetter, educationCertificates) VALUES ('harish123','porwal','MCA','2000/02/02','male',23456789 ,9876543768,'nsajhd hknsd nsa', 'hd1@gmail.com','23456','23456','345678','5678');`\n\n//   '${bh.input.identycard}',\n//${bh.input.passbook}\n//  '${bh.input.experienceLetter}',\n//  '${bh.input.educationCertificates}')`;\n\n\n\n\n  console.log(\"----------->\",bh.input.empDetails)",
+        "script": "\n\nbh.input.empDetails = `UPDATE empdetails SET fname = '${bh.input.fname}', lname = '${bh.input.lname}', qualification = '${bh.input.qualification}', dob = '${bh.input.dob}', gender = '${bh.input.gender}', phone = '${bh.input.phone}', referencephone = '${bh.input.referencephone}', address = '${bh.input.address}', email = '${bh.input.email}', passbook = '${bh.input.passbook}', identycard = '${bh.input.identycard}', experienceLetter = '${bh.input.experienceLetter}', educationCertificates ='${bh.input.educationCertificates}' where userName = '${bh.input.userName}';`\n\n\n//bh.input.empDetails=`INSERT INTO empDetails (fname, lname, qualification,dob, gender, phone, referencephone, address, email, passbook, identycard, experienceLetter, educationCertificates) VALUES ('${bh.input.fname}','${bh.input.lname}','${bh.input.qualification}','${bh.input.dob}','${bh.input.gender}',${bh.input.phone} ,${bh.input.referencephone},'${bh.input.address}', '${bh.input.email}','${bh.input.passbook}','${bh.input.identycard}','${bh.input.experienceLetter}','${bh.input.educationCertificates}');`\n\n\n  console.log(\"----------->\",bh.input.empDetails)",
         "functionName": "sd_ITPhb2foDv7UXhea",
         "category": "Function",
         "x": 225,
@@ -147,6 +147,7 @@
         "nodeType": "flow",
         "name": "",
         "databaseConfig": "sd_GE6Vsx1TRqmkFScc",
+        "queryType": "",
         "resultMap": {
             "type": "bh.local",
             "value": "outputMapping"
@@ -159,6 +160,7 @@
         "inputs": 1,
         "outputs": 1,
         "params": [],
+        "paramMappingObj": {},
         "dbType": "mysql",
         "functionName": "sd_T9E9cTaDF0yzSJWV",
         "category": "Storage",
@@ -244,7 +246,6 @@
         "nodeType": "flow",
         "name": "",
         "databaseConfig": "sd_GE6Vsx1TRqmkFScc",
-        "queryType": "",
         "resultMap": {
             "type": "bh.local",
             "value": "outputMapping"
@@ -257,7 +258,6 @@
         "inputs": 1,
         "outputs": 1,
         "params": [],
-        "paramMappingObj": {},
         "dbType": "mysql",
         "functionName": "sd_mtBqwGqLpO7n3Z4l",
         "category": "Storage",

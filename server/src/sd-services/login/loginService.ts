@@ -146,11 +146,10 @@ export class loginService {
         newpassword: bh.input.password,
       };
 
-      bh.loginquery = `INSERT INTO empdetails (userName, password) VALUES (
-    '${bh.input.userName}', 
-    '${bh.input.password}'
-    )`;
-
+      // bh.input.loginquery=`INSERT INTO empdetails (userName, password) VALUES (
+      //     '${bh.input.userName}',
+      //     '${bh.input.password}'
+      //     )`;
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_rWxIR5Z50Iqn736s(bh, parentSpanInst);
       //appendnew_next_sd_jyU275KmmvR25nAM

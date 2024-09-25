@@ -28,9 +28,8 @@
         "produces": "",
         "filetype": "path",
         "acceptFileUpload": false,
-        "useDataModel": false,
+        "useDataModel": true,
         "dataModelIsArray": false,
-        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -248,7 +247,6 @@
             "send": "bh.local.resultMapping"
         },
         "dataModelIsArray": false,
-        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -291,8 +289,8 @@
         "script": "bh.local.resultMapping=\"This username is taken. Try another\";",
         "functionName": "sd_H25EG2jNqcUcYwbw",
         "category": "Function",
-        "x": 520,
-        "y": 300,
+        "x": 545,
+        "y": 280,
         "wires": [
             [
                 "sd_P5BKQWWlAzNH6TXY"
@@ -329,7 +327,6 @@
             "send": "bh.local.resultMapping"
         },
         "dataModelIsArray": false,
-        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",

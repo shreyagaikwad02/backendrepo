@@ -185,15 +185,9 @@ export class empDetails_service {
       parentSpanInst
     );
     try {
-      // bh.input.empDetails = `INSERT INTO empDetails (fname, lname, qualification, dob, gender, phone, referencephone, address, email, passbook, identycard, experienceLetter, educationCertificates)
-      // VALUES ('${bh.input.fname}','${bh.input.lname}','${bh.input.qualification}','${bh.input.dob}','${bh.input.gender}','${bh.input.phone},'${bh.input.referencephone}','${bh.input.address}','${bh.input.email}','iiuiu','34545','34454','33322')`;
+      bh.input.empDetails = `UPDATE empdetails SET fname = '${bh.input.fname}', lname = '${bh.input.lname}', qualification = '${bh.input.qualification}', dob = '${bh.input.dob}', gender = '${bh.input.gender}', phone = '${bh.input.phone}', referencephone = '${bh.input.referencephone}', address = '${bh.input.address}', email = '${bh.input.email}', passbook = '${bh.input.passbook}', identycard = '${bh.input.identycard}', experienceLetter = '${bh.input.experienceLetter}', educationCertificates ='${bh.input.educationCertificates}' where userName = '${bh.input.userName}';`;
 
-      bh.input.empDetails = `INSERT INTO empDetails (fname, lname, qualification, dob, gender, phone, referencephone, address, email, passbook, identycard, experienceLetter, educationCertificates) VALUES ('harish123','porwal','MCA','2000/02/02','male',23456789 ,9876543768,'nsajhd hknsd nsa', 'hd1@gmail.com','23456','23456','345678','5678');`;
-
-      //   '${bh.input.identycard}',
-      //${bh.input.passbook}
-      //  '${bh.input.experienceLetter}',
-      //  '${bh.input.educationCertificates}')`;
+      //bh.input.empDetails=`INSERT INTO empDetails (fname, lname, qualification,dob, gender, phone, referencephone, address, email, passbook, identycard, experienceLetter, educationCertificates) VALUES ('${bh.input.fname}','${bh.input.lname}','${bh.input.qualification}','${bh.input.dob}','${bh.input.gender}',${bh.input.phone} ,${bh.input.referencephone},'${bh.input.address}', '${bh.input.email}','${bh.input.passbook}','${bh.input.identycard}','${bh.input.experienceLetter}','${bh.input.educationCertificates}');`
 
       console.log('----------->', bh.input.empDetails);
       this.tracerService.sendData(spanInst, bh);
@@ -231,7 +225,7 @@ export class empDetails_service {
       } else {
         throw new Error('Cannot find the selected config name');
       }
-      let params = [];
+      let params = undefined;
       params = params ? params : [];
       bh.local.outputMapping = await new GenericRDBMSOperations().executeSQL(
         connectionName,
@@ -296,7 +290,7 @@ export class empDetails_service {
       } else {
         throw new Error('Cannot find the selected config name');
       }
-      let params = undefined;
+      let params = [];
       params = params ? params : [];
       bh.local.outputMapping = await new GenericRDBMSOperations().executeSQL(
         connectionName,

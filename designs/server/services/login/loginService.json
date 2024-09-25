@@ -68,7 +68,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.input.logincredentials=`INSERT INTO empdetails (userName, password) VALUES (\n    '${bh.input.userName}', \n    '${bh.input.password}'\n    )`;\n\n\nbh.input.userCheckstatus;\nbh.local.userNotAvailable\n\nbh.input.checkuser={\n  userName:bh.input.userName,\n  newpassword:bh.input.password,\n}\n\nbh.loginquery= `INSERT INTO empdetails (userName, password) VALUES (\n    '${bh.input.userName}', \n    '${bh.input.password}'\n    )`;\n",
+        "script": "bh.input.logincredentials=`INSERT INTO empdetails (userName, password) VALUES (\n    '${bh.input.userName}', \n    '${bh.input.password}'\n    )`;\n\nbh.input.userCheckstatus;\nbh.local.userNotAvailable\n\nbh.input.checkuser={\n  userName:bh.input.userName,\n  newpassword:bh.input.password,\n}\n\n\n// bh.input.loginquery=`INSERT INTO empdetails (userName, password) VALUES (\n//     '${bh.input.userName}', \n//     '${bh.input.password}'\n//     )`;",
         "functionName": "sd_jyU275KmmvR25nAM",
         "category": "Function",
         "x": 180,
@@ -188,6 +188,7 @@
             "send": "bh.local.userNotAvailable"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",

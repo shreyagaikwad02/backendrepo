@@ -139,15 +139,15 @@ export class signupService {
       parentSpanInst
     );
     try {
-      bh.input.credentials = `INSERT INTO empdetails (userName, password) VALUES (
-    '${bh.input.userName}', 
-    '${bh.input.confirmPassword}')`;
+      // bh.input.credentials=`INSERT INTO empdetails (userName, password) VALUES (
+      //     '${bh.input.userName}',
+      //     '${bh.input.confirmPassword}')`;
 
       bh.input.checkcondition = {
         userName: bh.input.userName,
       };
 
-      bh.input.signupquery = `INSERT INTO empdetails (userName, password) VALUES (
+      bh.input.signup = `INSERT INTO empdetails (userName, password) VALUES (
     '${bh.input.userName}', 
     '${bh.input.confirmPassword}'
     )`;
@@ -186,11 +186,11 @@ export class signupService {
       } else {
         throw new Error('Cannot find the selected config name');
       }
-      let params = undefined;
+      let params = [];
       params = params ? params : [];
       bh.local.outputMapping = await new GenericRDBMSOperations().executeSQL(
         connectionName,
-        bh.input.signupquery,
+        bh.input.signup,
         params
       );
       this.tracerService.sendData(spanInst, bh);
@@ -236,7 +236,6 @@ export class signupService {
       parentSpanInst
     );
     try {
-      let unsatisfied = true;
       if (
         this.sdService.operators['empty'](
           bh.local.outputMapping,
@@ -246,9 +245,7 @@ export class signupService {
         )
       ) {
         bh = await this.sd_N71c3cdFh2mfe34T(bh, parentSpanInst);
-        unsatisfied = false;
-      }
-      if (unsatisfied) {
+      } else {
         bh = await this.sd_X9eTtVetJpJxnmSE(bh, parentSpanInst);
       }
       this.tracerService.sendData(spanInst, bh);
@@ -306,7 +303,7 @@ export class signupService {
       } else {
         throw new Error('Cannot find the selected config name');
       }
-      let params = undefined;
+      let params = [];
       params = params ? params : [];
       bh.local.empResult = await new GenericRDBMSOperations().executeSQL(
         connectionName,
