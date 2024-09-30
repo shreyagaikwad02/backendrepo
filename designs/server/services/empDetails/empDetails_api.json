@@ -64,8 +64,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "empdetails_api",
-        "functionName": "sd_uQhe6Ynzu8IFQABe",
-        "generated": false
+        "functionName": "sd_uQhe6Ynzu8IFQABe"
     },
     {
         "id": "sd_QjkqJ9Ro9uEd8dpj",
@@ -74,7 +73,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.local.saveEmpDetails={\nfname:bh.input.body.fname,\nlname:bh.input.body.lname,\nqualification:bh.input.body.qualification,\ndob:bh.input.body.dob,\ngender:bh.input.body.gender,\nphone:bh.input.body.phone,\nreferencephone:bh.input.body.referencephone,\naddress:bh.input.body.address,\nemail:bh.input.body.email,\npassbook:bh.input.body.passbook,\nidentycard:bh.input.body.identycard,\nexperienceLetter:bh.input.body.experienceLetter,\neducationCertificates:bh.input.body.educationCertificates\n}",
+        "script": "bh.local.saveEmpDetails={\nfname:bh.input.body.fname,\nlname:bh.input.body.lname,\nqualification:bh.input.body.qualification,\ndob:bh.input.body.dob,\ngender:bh.input.body.gender,\nphone:bh.input.body.phone,\nreferencephone:bh.input.body.referencephone,\naddress:bh.input.body.address,\nemail:bh.input.body.email,\npreviousEmployer:bh.input.body.previousEmployer,\npassbook:bh.input.body.passbook,\nidentycard:bh.input.body.identycard,\nexperienceLetter:bh.input.body.experienceLetter,\neducationCertificates:bh.input.body.educationCertificates\n}",
         "functionName": "sd_QjkqJ9Ro9uEd8dpj",
         "category": "Function",
         "x": 265,
@@ -203,9 +202,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generated": true,
         "generateNext": false,
-        "serviceName": "empdetails_api"
+        "serviceName": "empdetails_api",
+        "generated": true
     },
     {
         "id": "sd_iCHwONu35oeHjlen",
@@ -255,7 +254,6 @@
             "send": "bh.resultMapping"
         },
         "dataModelIsArray": false,
-        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -335,8 +333,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "empdetails_api",
-        "functionName": "sd_qMdkgBRdvpy5iLrM",
-        "generated": false
+        "functionName": "sd_qMdkgBRdvpy5iLrM"
     },
     {
         "id": "sd_5v32RaolFY4pZSUC",

@@ -1,0 +1,699 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9",
+        "type": "tab",
+        "createdDate": "2024-09-25T11:46:22.403Z",
+        "label": "heDetails",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "heDetails",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_z97DC8w6tranw4sJ",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "getemployeeNameapiout",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [
+                {
+                    "key": "application/json",
+                    "rowId": "sd_yFbiLfcmURsG5wfq",
+                    "valid": true
+                }
+            ],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "getemployeeNameapiout",
+        "category": "HTTP",
+        "x": 305,
+        "y": 80,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "heDetails",
+        "generated": true
+    },
+    {
+        "id": "sd_VHSOQc6ju4IXC49Y",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_GE6Vsx1TRqmkFScc",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "result"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "str",
+            "value": "SELECT fname from employees"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "mysql",
+        "functionName": "sd_VHSOQc6ju4IXC49Y",
+        "category": "Storage",
+        "x": 200,
+        "y": 80,
+        "wires": [
+            [
+                "sd_z97DC8w6tranw4sJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "heDetails",
+        "generated": true
+    },
+    {
+        "id": "sd_bNBEos72OdXHFkDa",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "getEmployeeName",
+        "path": "employeeName",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 80,
+        "y": 80,
+        "wires": [
+            [
+                "sd_VHSOQc6ju4IXC49Y"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "heDetails",
+        "functionName": "sd_bNBEos72OdXHFkDa"
+    },
+    {
+        "id": "sd_R2B9BwKeAIRyZkh9",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "getEmployeeDetails",
+        "path": "employeeDetails/:fname",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "fname",
+                    "desc": "name",
+                    "type": "path",
+                    "required": false,
+                    "rowId": "sd_qHRZFxmqUDyr8pfK",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 85,
+        "y": 180,
+        "wires": [
+            [
+                "sd_E76ZfRlYdobhoCoT"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "heDetails",
+        "functionName": "sd_R2B9BwKeAIRyZkh9"
+    },
+    {
+        "id": "sd_BTPLqAAy2bhlq8Ik",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_GE6Vsx1TRqmkFScc",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "result"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "mysql",
+        "functionName": "sd_BTPLqAAy2bhlq8Ik",
+        "category": "Storage",
+        "x": 285,
+        "y": 180,
+        "wires": [
+            [
+                "sd_dFifVKPf7xrUc9Qc"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "heDetails",
+        "generated": true
+    },
+    {
+        "id": "sd_dFifVKPf7xrUc9Qc",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "getEployeeDetailsapiout",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [
+                {
+                    "key": "application/json",
+                    "rowId": "sd_DtGI2WBstSG7vAJY",
+                    "valid": true
+                }
+            ],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "getEployeeDetailsapiout",
+        "category": "HTTP",
+        "x": 385,
+        "y": 180,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "heDetails",
+        "generated": true
+    },
+    {
+        "id": "sd_E76ZfRlYdobhoCoT",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.query = `SELECT fname, lname, gender, dob, phone, referencePhone, email, address FROM employees WHERE fname = '${bh.input.params.fname}' `;",
+        "functionName": "sd_E76ZfRlYdobhoCoT",
+        "category": "Function",
+        "x": 185,
+        "y": 180,
+        "wires": [
+            [
+                "sd_BTPLqAAy2bhlq8Ik"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "heDetails",
+        "generated": true
+    },
+    {
+        "id": "sd_bKhjmalZSM4pM3Vo",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "getitDetailsapiout",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [
+                {
+                    "key": "application/json",
+                    "rowId": "sd_DtGI2WBstSG7vAJY",
+                    "valid": true
+                }
+            ],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "getitDetailsapiout",
+        "category": "HTTP",
+        "x": 385,
+        "y": 280,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "heDetails",
+        "generated": true
+    },
+    {
+        "id": "sd_yJ0jyx9fn3LPTSnJ",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_GE6Vsx1TRqmkFScc",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "result"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "mysql",
+        "functionName": "sd_yJ0jyx9fn3LPTSnJ",
+        "category": "Storage",
+        "x": 285,
+        "y": 280,
+        "wires": [
+            [
+                "sd_bKhjmalZSM4pM3Vo"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "heDetails",
+        "generated": true
+    },
+    {
+        "id": "sd_FpgbiDrjxhW81dyB",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.query = `SELECT employeeStatus, employeeID, department, companyEmail, jobRole, manager, deviceAllocated, project, comments FROM employees WHERE fname = '${bh.input.params.fname}'`;",
+        "functionName": "sd_FpgbiDrjxhW81dyB",
+        "category": "Function",
+        "x": 185,
+        "y": 280,
+        "wires": [
+            [
+                "sd_yJ0jyx9fn3LPTSnJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "heDetails",
+        "generated": true
+    },
+    {
+        "id": "sd_nZvELxSrt0UqOkYJ",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "getITDetails",
+        "path": "itDetails/:fname",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "fname",
+                    "desc": "name",
+                    "type": "path",
+                    "required": false,
+                    "rowId": "sd_qHRZFxmqUDyr8pfK",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 85,
+        "y": 280,
+        "wires": [
+            [
+                "sd_FpgbiDrjxhW81dyB"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "heDetails",
+        "functionName": "sd_nZvELxSrt0UqOkYJ"
+    },
+    {
+        "id": "sd_lda6w2SZb09cbxRN",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "getitbgDetailsapiout",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [
+                {
+                    "key": "application/json",
+                    "rowId": "sd_DtGI2WBstSG7vAJY",
+                    "valid": true
+                }
+            ],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "getitbgDetailsapiout",
+        "category": "HTTP",
+        "x": 385,
+        "y": 400,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "heDetails",
+        "generated": true
+    },
+    {
+        "id": "sd_X6dFoFK395FAY2Sw",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_GE6Vsx1TRqmkFScc",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "result"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "mysql",
+        "functionName": "sd_X6dFoFK395FAY2Sw",
+        "category": "Storage",
+        "x": 285,
+        "y": 400,
+        "wires": [
+            [
+                "sd_lda6w2SZb09cbxRN"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "heDetails",
+        "generated": true
+    },
+    {
+        "id": "sd_ZfWoSD3qjqdTRAS1",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.query = `SELECT employeeStatus, fname, lname, gender, dob, phone, referencePhone, email, address, previousEmployer, jobTitle, companyLocation, reasonForLeaving, signature, commentsBg FROM employees WHERE fname = '${bh.input.params.fname}'`;",
+        "functionName": "sd_ZfWoSD3qjqdTRAS1",
+        "category": "Function",
+        "x": 185,
+        "y": 400,
+        "wires": [
+            [
+                "sd_X6dFoFK395FAY2Sw"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "heDetails",
+        "generated": true
+    },
+    {
+        "id": "sd_3SBEvLZgY8bLgo39",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "getBgDetails",
+        "path": "bgDetails/:fname",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "fname",
+                    "desc": "name",
+                    "type": "path",
+                    "required": false,
+                    "rowId": "sd_qHRZFxmqUDyr8pfK",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 85,
+        "y": 400,
+        "wires": [
+            [
+                "sd_ZfWoSD3qjqdTRAS1"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "heDetails",
+        "functionName": "sd_3SBEvLZgY8bLgo39"
+    }
+]

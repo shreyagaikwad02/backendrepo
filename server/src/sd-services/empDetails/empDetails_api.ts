@@ -165,6 +165,7 @@ export class empdetails_api {
         referencephone: bh.input.body.referencephone,
         address: bh.input.body.address,
         email: bh.input.body.email,
+        previousEmployer: bh.input.body.previousEmployer,
         passbook: bh.input.body.passbook,
         identycard: bh.input.body.identycard,
         experienceLetter: bh.input.body.experienceLetter,

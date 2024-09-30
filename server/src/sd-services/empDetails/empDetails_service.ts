@@ -296,7 +296,7 @@ export class empDetails_service {
       } else {
         throw new Error('Cannot find the selected config name');
       }
-      let params = undefined;
+      let params = [];
       params = params ? params : [];
       bh.local.outputMapping = await new GenericRDBMSOperations().executeSQL(
         connectionName,

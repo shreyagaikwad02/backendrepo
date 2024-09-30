@@ -1,0 +1,83 @@
+{
+    "/employeeName": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "heDetails"
+            ]
+        }
+    },
+    "/employeeDetails/:fname": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "fname",
+                    "description": "name",
+                    "required": false
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "heDetails"
+            ]
+        }
+    },
+    "/itDetails/:fname": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "fname",
+                    "description": "name",
+                    "required": false
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "heDetails"
+            ]
+        }
+    },
+    "/bgDetails/:fname": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [
+                {
+                    "in": "path",
+                    "name": "fname",
+                    "description": "name",
+                    "required": false
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "heDetails"
+            ]
+        }
+    }
+}

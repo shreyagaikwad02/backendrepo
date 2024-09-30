@@ -1,4 +1,6 @@
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-heDetails-SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9
+import { heDetails as SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9 } from './sd-services/heDetails';
 //CORE_REFERENCE_IMPORT-empdetails_api-SSD_SERVICE_ID_sd_1FTGO2OGzxB8kqeI
 import { empdetails_api as SSD_SERVICE_ID_sd_1FTGO2OGzxB8kqeI } from './sd-services/empDetails/empdetails_api';
 //CORE_REFERENCE_IMPORT-empDetails_service-SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy
@@ -26,6 +28,8 @@ import { login_api as SSD_SERVICE_ID_sd_pnvwTXMjkLPZ7X06 } from './sd-services/l
 
 export const UserRoutes = [
 //CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY
+//CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-heDetails-SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9
+SSD_SERVICE_ID_sd_jpmEPYSGf9OhThx9,
 //CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-empdetails_api-SSD_SERVICE_ID_sd_1FTGO2OGzxB8kqeI
 SSD_SERVICE_ID_sd_1FTGO2OGzxB8kqeI,
 //CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY-empDetails_service-SSD_SERVICE_ID_sd_alB9U5sYkG6DoYPy
